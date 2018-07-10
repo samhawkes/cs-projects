@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BlackJack
+﻿namespace BlackJack
 {
     public static class Enums
     {
@@ -16,7 +10,7 @@ namespace BlackJack
             Spades
         }
 
-        public enum Value
+        public enum Face
         {
             Ace,
             Two,
