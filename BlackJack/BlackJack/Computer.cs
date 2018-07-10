@@ -33,10 +33,17 @@ namespace BlackJack
         };
 
 
-        internal string SetComputerName()
+        private string SetComputerName()
         {
             Random random = new Random();
             return ComputerNames.ElementAt(random.Next(ComputerNames.Count));
+        }
+
+        public void Initialise()
+        {
+            this.Name = this.SetComputerName();
+
+            Console.WriteLine($"Your opponent today will be: {this.Name} \n");
         }
     }
 }

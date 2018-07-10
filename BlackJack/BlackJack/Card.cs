@@ -8,6 +8,7 @@ namespace BlackJack
         {
             this.Suit = (Suit)suit;
             this.Face = (Face)face;
+            this.Visibility = Visibility.Visible;
         }
 
         public Suit Suit { get; set; }

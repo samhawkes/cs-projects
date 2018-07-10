@@ -32,5 +32,12 @@
             Visible,
             Hidden
         }
+
+        public enum GameState
+        {
+            NewGame,
+            GameInProgress,
+            GameOver
+        }
     }
 }

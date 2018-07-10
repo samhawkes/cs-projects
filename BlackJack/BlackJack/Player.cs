@@ -26,5 +26,27 @@ namespace BlackJack
         }
 
         protected string _name;
+
+        public void Initialise()
+        {
+            Console.WriteLine("\nWhat is your name?\n");
+
+            bool goodName = false;
+
+            while (goodName == false)
+            {
+                try
+                {
+                    this.Name = Console.ReadLine();
+                    goodName = true;
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message + "\n");
+                }
+            }
+
+            Console.WriteLine($"\nHello {this.Name}! \n");
+        }
     }
 }
