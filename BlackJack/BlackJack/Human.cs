@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using static BlackJack.Enums;
 
 namespace BlackJack
 {
-    internal class Player
+    public class Human : IPlayer
     {
-        internal Player()
+        public Human()
         {
+            this.Initialise();
         }
 
-        internal string Name
+        public string Name
         {
             get
             {
@@ -27,7 +30,20 @@ namespace BlackJack
 
         protected string _name;
 
-        public void Initialise()
+        public int Score { get; set; }
+
+        public List<Card> Hand { get; set; }
+
+        public PlayerType PlayerType
+        {
+            get
+            {
+                return PlayerType.Human;
+            }
+        }
+
+
+        private void Initialise()
         {
             Console.WriteLine("\nWhat is your name?\n");
 
@@ -45,6 +61,9 @@ namespace BlackJack
                     Console.WriteLine(ex.Message + "\n");
                 }
             }
+
+            this.Score = 0;
+            this.Hand = new List<Card>();
 
             Console.WriteLine($"\nHello {this.Name}! \n");
         }

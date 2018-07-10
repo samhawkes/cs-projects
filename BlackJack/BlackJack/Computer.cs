@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using static BlackJack.Enums;
 
 namespace BlackJack
 {
-    internal class Computer
+    public class Computer : IPlayer
     {
-        internal string Name
+        public Computer()
+        {
+            this.Initialise();
+        }
+
+        public string Name
         {
             get
             {
@@ -20,6 +26,18 @@ namespace BlackJack
 
         protected string _name;
 
+        public int Score { get; set; }
+
+        public List<Card> Hand { get; set; }
+
+        public PlayerType PlayerType
+        {
+            get
+            {
+                return PlayerType.Computer;
+            }
+        }
+
         private List<string> ComputerNames = new List<string>
         {
             "Steve",
@@ -32,7 +50,6 @@ namespace BlackJack
             "Harold"
         };
 
-
         private string SetComputerName()
         {
             Random random = new Random();
@@ -42,6 +59,8 @@ namespace BlackJack
         public void Initialise()
         {
             this.Name = this.SetComputerName();
+            this.Score = 0;
+            this.Hand = new List<Card>();
 
             Console.WriteLine($"Your opponent today will be: {this.Name} \n");
         }

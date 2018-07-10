@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BlackJack.Enums;
 
 namespace BlackJack
 {
@@ -44,6 +45,37 @@ namespace BlackJack
                 deck[j] = temp;
             }
             return deck;
+        }
+
+        public void DealCard(IPlayer player, bool isVisible = true)
+        {
+            Card cardToDeal = Cards[Cards.Count - 1];
+
+            if (!isVisible)
+                cardToDeal.Visibility = Visibility.Hidden;
+
+            player.Hand.Add(cardToDeal);
+
+            this.RemoveCard(cardToDeal);
+        }
+
+        private void RemoveCard(Card card)
+        {
+            Cards.Remove(card);
+        }
+
+        public void DealStartingHand(IPlayer player)
+        {
+            if (player.PlayerType.Equals(PlayerType.Computer))
+            {
+                DealCard(player, false);
+            }
+            else
+            {
+                DealCard(player);
+            }
+
+            DealCard(player);
         }
     }
 }

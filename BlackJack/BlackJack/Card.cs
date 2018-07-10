@@ -15,6 +15,8 @@ namespace BlackJack
 
         public Face Face { get; set; }
 
+        public string CardName { get { return $"the {this.Face} of {this.Suit}"; } }
+
         public int Value
         {
             get

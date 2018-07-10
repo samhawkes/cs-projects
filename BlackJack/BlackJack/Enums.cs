@@ -39,5 +39,11 @@
             GameInProgress,
             GameOver
         }
+
+        public enum PlayerType
+        {
+            Human,
+            Computer
+        }
     }
 }

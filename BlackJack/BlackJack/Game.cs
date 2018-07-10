@@ -16,7 +16,7 @@ namespace BlackJack
     {
         public Game()
         {
-            _state = GameState.NewGame;
+            //_state = GameState.NewGame;
         }
 
         public GameState State
