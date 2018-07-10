@@ -75,7 +75,7 @@ namespace BlackJack
                 deck[i] = deck[j];
                 deck[j] = temp;
             }
-            return deck;
+            return deck; 
         }
     }
 }
