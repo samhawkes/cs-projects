@@ -33,7 +33,7 @@ namespace BlackJack
 
             deck.DealStartingHand(computer);
 
-            Console.WriteLine($"{computer.Name} has been dealt {computer.Hand[1].CardName} and a face down card.\n");
+            Console.WriteLine($"{computer.Name} has been dealt {computer.Hand[0].CardName} and a face down card.\n");
         }
 
         private static void HumansTurn()

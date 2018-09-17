@@ -66,6 +66,8 @@ namespace BlackJack
 
         public void DealStartingHand(IPlayer player)
         {
+            DealCard(player);
+
             if (player.PlayerType.Equals(PlayerType.Computer))
             {
                 DealCard(player, false);
@@ -74,8 +76,6 @@ namespace BlackJack
             {
                 DealCard(player);
             }
-
-            DealCard(player);
         }
     }
 }
